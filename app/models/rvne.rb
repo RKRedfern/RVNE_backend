@@ -1,0 +1,2 @@
+class Rvne < ApplicationRecord
+end
