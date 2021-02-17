@@ -6,7 +6,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
+        
+        user = User.find_or_create_by(user_params)
         if user.save
             render json: UserSerializer.new(user), status: :accepted
         else
