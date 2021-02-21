@@ -7,7 +7,9 @@ class Api::V1::RvnesController < ApplicationController
     end
 
     def create 
+        #byebug
         rvne = Rvne.new(rvne_params)
+        
         if rvne.save
             render json: rvne, status: :accepted
         else 
